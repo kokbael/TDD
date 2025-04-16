@@ -10,11 +10,7 @@
 extension MenuSection {
     static func fixture(
         category: String = "category",
-        items: [MenuItem] = [
-            .fixture(category: "category"),
-            .fixture(category: "category"),
-            .fixture(category: "category"),
-        ]
+        items: [MenuItem] = [.fixture()]
     ) -> MenuSection {
         MenuSection(
             category: category,
