@@ -6,9 +6,10 @@
 //
 
 import SwiftUI
+import Combine
 
 struct MenuList: View {
-    let viewModel: ViewModel
+    @StateObject var viewModel: ViewModel
     
     var body: some View {
         List {
@@ -28,16 +29,27 @@ extension MenuList {
     class ViewModel: ObservableObject {
         @Published private(set) var sections: [MenuSection]
         
+        var cancellable = Set<AnyCancellable>()
+        
         init(
             menuFetching: MenuFetching,
-            menuGrouping: @escaping ([MenuItem]) -> [MenuSection]) {
-                self.sections = menuGrouping([])
+            menuGrouping: @escaping ([MenuItem]) -> [MenuSection] = groupMenuByCategory) {
+                self.sections = []
+                menuFetching.fetchMenu()
+                    .sink(
+                        receiveCompletion: {
+                        _ in
+                    }, receiveValue: { [weak self] items in
+                        self?.sections = menuGrouping(items)
+                        
+                    })
+                    .store(in: &cancellable)
             }
     }
 }
 
 #Preview {
     NavigationStack{
-        MenuList(viewModel: .init(menuFetching: MenuFetchingPlaceholder(), menuGrouping: groupMenuByCategory))
+        MenuList(viewModel: .init(menuFetching: MenuFetchingPlaceholder()))
     }
 }
