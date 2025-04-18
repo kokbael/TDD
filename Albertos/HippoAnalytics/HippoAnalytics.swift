@@ -7,8 +7,8 @@
 
 import Foundation
 
-public class HippoAnalytic {
-    public static let shared = HippoAnalytic()
+public class HippoAnalyticsClient {
+    public static let shared = HippoAnalyticsClient()
     private init() {}
     
     var apiKey: String?

@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Combine
+import HippoPayments
 
 struct OrderDetail: View {
     @StateObject private var viewModel: ViewModel
@@ -42,10 +43,16 @@ extension OrderDetail {
         @Published private(set) var orderItems: [MenuItem] = []
         @Published private(set) var totalPrice: Double = 0.0
         
+        private let paymentProcessor: PaymentProcessing
+        
         private var cancellables = Set<AnyCancellable>()
         
-        init(orderController: OrderController) {
+        init(
+            orderController: OrderController,
+            paymentProcessor: PaymentProcessing = HippoPaymentsProcessor(apiKey: "your_api_key_here")
+        ) {
             self.orderController = orderController
+            self.paymentProcessor = paymentProcessor
             
             setupSubscriptions()
         }
@@ -59,5 +66,15 @@ extension OrderDetail {
                 }
                 .store(in: &cancellables)
         }
+        
+        func checkout() {
+           paymentProcessor.process(for: orderController.order)
+             .sink(
+               receiveCompletion: { _ in },
+               receiveValue: { paymentResult in
+                 print("Payment result: \(paymentResult)")
+             })
+             .store(in: &cancellables)
+         }
     }
 }
