@@ -15,12 +15,10 @@ struct OrderDetail: View {
     }
     
     var body: some View {
-        NavigationStack {
-            List {
-                // TODO: 주문 목록을 보여주는 UI
-            }
-            .navigationTitle("주문 상세")
+        List {
+            // TODO: 주문 목록을 보여주는 UI
         }
+        .navigationTitle("주문 상세")
     }
 }
 

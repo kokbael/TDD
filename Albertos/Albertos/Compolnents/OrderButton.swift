@@ -16,22 +16,16 @@ struct OrderButton: View {
     }
     
     var body: some View {
-        Button(action: {
-            // 주문 상세 화면으로 이동하는 로직
-            viewModel.showOrderDetail.toggle()
-        }) {
+        NavigationLink(value: "OrderDetail") {
             Text(viewModel.buttonText)
-        }
-        .sheet(isPresented: $viewModel.showOrderDetail) {
-            OrderDetail(orderController: viewModel.orderController)
         }
     }
 }
 
 extension OrderButton {
     class ViewModel: ObservableObject {
+        
         @Published var buttonText: String = "주문하기"
-        @Published var showOrderDetail: Bool = false
         
         let orderController: OrderController
         
