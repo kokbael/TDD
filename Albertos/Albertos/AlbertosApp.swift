@@ -15,6 +15,7 @@ struct AlbertosApp: App {
         WindowGroup {
             NavigationStack {
                 MenuList(viewModel: .init(menuFetching: MenuFetcher()))
+                OrderButton(orderController: orderController)
             }
             .environmentObject(orderController)
         }
