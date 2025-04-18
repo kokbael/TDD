@@ -7,6 +7,7 @@
 
 @testable import Albertos
 import XCTest
+import HippoPayments
 
 final class OrderDetailViewModelTests: XCTestCase {
     
@@ -23,6 +24,36 @@ final class OrderDetailViewModelTests: XCTestCase {
         )
         viewModel.checkout()
         XCTAssertEqual(paymentProcessingSpy.receivedOrder, orderController.order)
+    }
+    
+    func testWhenPaymentFailsUpdatesPropertyToShowErrorAlert() {
+        let viewModel = OrderDetail.ViewModel(
+            orderController: OrderController(),
+            paymentProcessor: PaymentProcessingStub(
+                returning: .failure(HippoPaymentsError.genericError)
+            )
+        )
+        let predicate = NSPredicate { _,_ in viewModel.alertToShow != nil }
+        let expectation = XCTNSPredicateExpectation(predicate: predicate, object: .none)
+        viewModel.checkout()
+        wait(for: [expectation], timeout: 2)
+        XCTAssertEqual(viewModel.alertToShow?.title,"결제 실패")
+        XCTAssertEqual(
+            viewModel.alertToShow?.message, "The operation couldn’t be completed. (HippoPayments.HippoPaymentsError error 0.)"
+        )
+        XCTAssertEqual(viewModel.alertToShow?.buttonText, "확인")
+    }
+    
+    func testWhenPaymentSucceedsDismissingTheAlertRunsTheGivenClosure() {
+        let viewModel = OrderDetail.ViewModel(
+            orderController: OrderController(),
+            paymentProcessor: PaymentProcessingStub(returning: .success(()))
+        )
+        let predicate = NSPredicate { _,_ in viewModel.alertToShow != nil }
+        let expectation = XCTNSPredicateExpectation(predicate: predicate, object: .none)
+        viewModel.checkout()
+        wait(for: [expectation], timeout: 2)
+        XCTAssertEqual(viewModel.alertToShow?.title,"결제 성공")
     }
     
 }
