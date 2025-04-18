@@ -7,6 +7,7 @@
 
 import SwiftUI
 import Combine
+import HippoAnalytics
 
 struct MenuList: View {
     @EnvironmentObject var orderController: OrderController
@@ -61,6 +62,12 @@ extension MenuList {
         init(
             menuFetching: MenuFetching,
             menuGrouping: @escaping ([MenuItem]) -> [MenuSection] = groupMenuByCategory) {
+                
+                HippoAnalytic.shared.logEvent(
+                   named: "menuListOpened",
+                   properties: ["menuListOpened": "Menu List Opened"]
+                 )
+                
                 self.menuFetching = menuFetching
                 self.menuGrouping = menuGrouping
                 fetchMenu()

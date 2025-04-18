@@ -6,7 +6,28 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		0ACA82E02DB1F1AF00F79B3A /* HippoAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ACA82DA2DB1F1AF00F79B3A /* HippoAnalytics.framework */; };
+		0ACA82E12DB1F1AF00F79B3A /* HippoAnalytics.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0ACA82DA2DB1F1AF00F79B3A /* HippoAnalytics.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0ACA82F52DB1F42500F79B3A /* HippoPayments.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ACA82EF2DB1F42500F79B3A /* HippoPayments.framework */; };
+		0ACA82F62DB1F42500F79B3A /* HippoPayments.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 0ACA82EF2DB1F42500F79B3A /* HippoPayments.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
+		0ACA82DE2DB1F1AF00F79B3A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0AD2AC922DADFB50004D5089 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0ACA82D92DB1F1AF00F79B3A;
+			remoteInfo = HippoAnalytics;
+		};
+		0ACA82F32DB1F42500F79B3A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0AD2AC922DADFB50004D5089 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0ACA82EE2DB1F42500F79B3A;
+			remoteInfo = HippoPayments;
+		};
 		0AD2ACAB2DADFB52004D5089 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0AD2AC922DADFB50004D5089 /* Project object */;
@@ -16,12 +37,62 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		0A140F232DB1EA4E004017D8 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				0ACA82F62DB1F42500F79B3A /* HippoPayments.framework in Embed Frameworks */,
+				0ACA82E12DB1F1AF00F79B3A /* HippoAnalytics.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		0ACA82DA2DB1F1AF00F79B3A /* HippoAnalytics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HippoAnalytics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0ACA82EF2DB1F42500F79B3A /* HippoPayments.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = HippoPayments.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AD2AC9A2DADFB50004D5089 /* Albertos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Albertos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0AD2ACAA2DADFB52004D5089 /* AlbertosTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AlbertosTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		0ACA82E22DB1F1AF00F79B3A /* Exceptions for "HippoAnalytics" folder in "HippoAnalytics" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			publicHeaders = (
+				HippoAnalytics.h,
+			);
+			target = 0ACA82D92DB1F1AF00F79B3A /* HippoAnalytics */;
+		};
+		0ACA82F72DB1F42500F79B3A /* Exceptions for "HippoPayments" folder in "HippoPayments" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			publicHeaders = (
+				HippoPayments.h,
+			);
+			target = 0ACA82EE2DB1F42500F79B3A /* HippoPayments */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		0ACA82DB2DB1F1AF00F79B3A /* HippoAnalytics */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				0ACA82E22DB1F1AF00F79B3A /* Exceptions for "HippoAnalytics" folder in "HippoAnalytics" target */,
+			);
+			path = HippoAnalytics;
+			sourceTree = "<group>";
+		};
+		0ACA82F02DB1F42500F79B3A /* HippoPayments */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				0ACA82F72DB1F42500F79B3A /* Exceptions for "HippoPayments" folder in "HippoPayments" target */,
+			);
+			path = HippoPayments;
+			sourceTree = "<group>";
+		};
 		0AD2AC9C2DADFB50004D5089 /* Albertos */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = Albertos;
@@ -35,10 +106,26 @@
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0ACA82D72DB1F1AF00F79B3A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0ACA82EC2DB1F42500F79B3A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0AD2AC972DADFB50004D5089 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0ACA82F52DB1F42500F79B3A /* HippoPayments.framework in Frameworks */,
+				0ACA82E02DB1F1AF00F79B3A /* HippoAnalytics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -57,6 +144,8 @@
 			children = (
 				0AD2AC9C2DADFB50004D5089 /* Albertos */,
 				0AD2ACAD2DADFB52004D5089 /* AlbertosTests */,
+				0ACA82DB2DB1F1AF00F79B3A /* HippoAnalytics */,
+				0ACA82F02DB1F42500F79B3A /* HippoPayments */,
 				0AD2AC9B2DADFB50004D5089 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -66,13 +155,78 @@
 			children = (
 				0AD2AC9A2DADFB50004D5089 /* Albertos.app */,
 				0AD2ACAA2DADFB52004D5089 /* AlbertosTests.xctest */,
+				0ACA82DA2DB1F1AF00F79B3A /* HippoAnalytics.framework */,
+				0ACA82EF2DB1F42500F79B3A /* HippoPayments.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		0ACA82D52DB1F1AF00F79B3A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0ACA82EA2DB1F42500F79B3A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
+		0ACA82D92DB1F1AF00F79B3A /* HippoAnalytics */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0ACA82E32DB1F1AF00F79B3A /* Build configuration list for PBXNativeTarget "HippoAnalytics" */;
+			buildPhases = (
+				0ACA82D52DB1F1AF00F79B3A /* Headers */,
+				0ACA82D62DB1F1AF00F79B3A /* Sources */,
+				0ACA82D72DB1F1AF00F79B3A /* Frameworks */,
+				0ACA82D82DB1F1AF00F79B3A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				0ACA82DB2DB1F1AF00F79B3A /* HippoAnalytics */,
+			);
+			name = HippoAnalytics;
+			packageProductDependencies = (
+			);
+			productName = HippoAnalytics;
+			productReference = 0ACA82DA2DB1F1AF00F79B3A /* HippoAnalytics.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		0ACA82EE2DB1F42500F79B3A /* HippoPayments */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0ACA82F82DB1F42500F79B3A /* Build configuration list for PBXNativeTarget "HippoPayments" */;
+			buildPhases = (
+				0ACA82EA2DB1F42500F79B3A /* Headers */,
+				0ACA82EB2DB1F42500F79B3A /* Sources */,
+				0ACA82EC2DB1F42500F79B3A /* Frameworks */,
+				0ACA82ED2DB1F42500F79B3A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				0ACA82F02DB1F42500F79B3A /* HippoPayments */,
+			);
+			name = HippoPayments;
+			packageProductDependencies = (
+			);
+			productName = HippoPayments;
+			productReference = 0ACA82EF2DB1F42500F79B3A /* HippoPayments.framework */;
+			productType = "com.apple.product-type.framework";
+		};
 		0AD2AC992DADFB50004D5089 /* Albertos */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0AD2ACBE2DADFB52004D5089 /* Build configuration list for PBXNativeTarget "Albertos" */;
@@ -80,10 +234,13 @@
 				0AD2AC962DADFB50004D5089 /* Sources */,
 				0AD2AC972DADFB50004D5089 /* Frameworks */,
 				0AD2AC982DADFB50004D5089 /* Resources */,
+				0A140F232DB1EA4E004017D8 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				0ACA82DF2DB1F1AF00F79B3A /* PBXTargetDependency */,
+				0ACA82F42DB1F42500F79B3A /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				0AD2AC9C2DADFB50004D5089 /* Albertos */,
@@ -128,6 +285,13 @@
 				LastSwiftUpdateCheck = 1620;
 				LastUpgradeCheck = 1620;
 				TargetAttributes = {
+					0ACA82D92DB1F1AF00F79B3A = {
+						CreatedOnToolsVersion = 16.2;
+						LastSwiftMigration = 1620;
+					};
+					0ACA82EE2DB1F42500F79B3A = {
+						CreatedOnToolsVersion = 16.2;
+					};
 					0AD2AC992DADFB50004D5089 = {
 						CreatedOnToolsVersion = 16.2;
 					};
@@ -153,11 +317,27 @@
 			targets = (
 				0AD2AC992DADFB50004D5089 /* Albertos */,
 				0AD2ACA92DADFB52004D5089 /* AlbertosTests */,
+				0ACA82D92DB1F1AF00F79B3A /* HippoAnalytics */,
+				0ACA82EE2DB1F42500F79B3A /* HippoPayments */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		0ACA82D82DB1F1AF00F79B3A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0ACA82ED2DB1F42500F79B3A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0AD2AC982DADFB50004D5089 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -175,6 +355,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0ACA82D62DB1F1AF00F79B3A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0ACA82EB2DB1F42500F79B3A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		0AD2AC962DADFB50004D5089 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -192,6 +386,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		0ACA82DF2DB1F1AF00F79B3A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0ACA82D92DB1F1AF00F79B3A /* HippoAnalytics */;
+			targetProxy = 0ACA82DE2DB1F1AF00F79B3A /* PBXContainerItemProxy */;
+		};
+		0ACA82F42DB1F42500F79B3A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0ACA82EE2DB1F42500F79B3A /* HippoPayments */;
+			targetProxy = 0ACA82F32DB1F42500F79B3A /* PBXContainerItemProxy */;
+		};
 		0AD2ACAC2DADFB52004D5089 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 0AD2AC992DADFB50004D5089 /* Albertos */;
@@ -200,6 +404,149 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		0ACA82E42DB1F1AF00F79B3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 59FP2PXRXK;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = kr.co.codegrove.HippoAnalytics;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		0ACA82E52DB1F1AF00F79B3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 59FP2PXRXK;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = kr.co.codegrove.HippoAnalytics;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		0ACA82F92DB1F42500F79B3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 59FP2PXRXK;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = kr.co.codegrove.HippoPayments;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		0ACA82FA2DB1F42500F79B3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUILD_LIBRARY_FOR_DISTRIBUTION = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = 59FP2PXRXK;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_MODULE_VERIFIER = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
+				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
+				PRODUCT_BUNDLE_IDENTIFIER = kr.co.codegrove.HippoPayments;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_INSTALL_OBJC_HEADER = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		0AD2ACBC2DADFB52004D5089 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -418,6 +765,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0ACA82E32DB1F1AF00F79B3A /* Build configuration list for PBXNativeTarget "HippoAnalytics" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0ACA82E42DB1F1AF00F79B3A /* Debug */,
+				0ACA82E52DB1F1AF00F79B3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0ACA82F82DB1F42500F79B3A /* Build configuration list for PBXNativeTarget "HippoPayments" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0ACA82F92DB1F42500F79B3A /* Debug */,
+				0ACA82FA2DB1F42500F79B3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		0AD2AC952DADFB50004D5089 /* Build configuration list for PBXProject "Albertos" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
